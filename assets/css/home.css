@@ -10,7 +10,7 @@ html[data-theme="light"] {
   --col-bd-icon:transparent;
   --bg-icon: #fff;
    --bg1-color: #fff;
-  --col-icon-dribbble: #ea4c89;
+ 
   --col-icon-linkedin: #0e76a8;
   --col-icon-kaggle: #41aff3;  
   --col-icon-instagram: rgb(201, 94, 174);
@@ -29,7 +29,7 @@ html[data-theme="dark"] {
   --col-box-shadow: 5px 5px 10px rgba(22, 21, 21, 0.7) , -5px -5px 10px rgba(255,255,255,0.1);
   --col-box-shadow-hover:inset rgba(255, 255, 255, 1) 2px 2px 4px, 
  inset rgba(255, 255, 255, 0.5) -2px -2px 4px;
-  --col-icon-dribbble: #ea4c89;
+
   --col-icon-linkedin: #0e76a8;
   --col-icon-kaggle: #41aff3;
   --col-icon-instagram: rgb(201, 94, 174);
@@ -333,31 +333,11 @@ html[light-mode="dark"] .github-icon{
   --------------------------
   */
   
-  .dribbble-icon{
-    width: 30px;
-    height: 30px;
-    margin-left:16px;
-    margin-top: 20px;
-  }
+
   
-  .dribbble:hover .dribbble-icon{ 
-      animation: dribbble-bounce .4s ease infinite;
-      transform: rotate(360deg);
-      transition: all 9s ease-in-out 0s;
-  }
+
   
-  @keyframes dribbble-bounce {
-    from, to {
-      margin-top: 20px;
-    }
-    50% { 
-      margin-top: 15px; 
-    }
-    
-    75%{
-      margin-top: 15px;
-    }
-  }
+  
   
   /*
   --------------------------
