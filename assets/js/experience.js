@@ -6,13 +6,13 @@ const experiencecards = document.querySelector(".experience-cards");
 const exp = [
   {
     title: "Unity Game Developer Intern ",
-    cardImage: "assets/images/experience-page/flipkart.jpg",
-    place: "Flipkart",
+    cardImage: "assets/images/experience-page/bvm.jpg",
+    place: "BVM Infotech",
     time: "(Jan, 2024 - present)",
     desp: "<li>Developed immersive 3D and 2D game environments using Unity, enhancing user engagement and interaction.</li> <li>Optimized game performance by implementing efficient algorithms and data structures, resulting in smoother gameplay experiences.</li> <li>Collaborated with cross-functional teams to design and implement game features, ensuring seamless integration and functionality.</li>",
 
   },
-  {
+ /* {
     title: "Student Developer",
     cardImage: "assets/images/experience-page/gsoc.png",
     place: "Google Summer Of Code",
@@ -25,7 +25,7 @@ const exp = [
     place: "IIT, Bombay",
     time: "(Dec, 19 - Jan, 20)",
     desp: "<li>Worked on the project “LTI (Learning Tools Interoperability) 2.0 standards Implementation for ekShiksha.</li><li>Designed a software that would help faculty to create a quiz using the questions from the database based on his/her choice of topics and he should be provided with various facilities and options to create a quiz of his choice.</li>",
-  },
+  },*/
 ];
 
 const showCards2 = () => {
@@ -62,30 +62,30 @@ document.addEventListener("DOMContentLoaded", showCards2);
 
 const volunteership = document.querySelector(".volunteership");
 const volunteershipcards = [
-  {
-    title: "GirlScript Summer Of Code 2020",
-    cardImage: "assets/images/experience-page/1.jpg",
-    description:
-      "Responsible for handling the projects GirlScript App and GirlScript Website Boilerplate.",
-  },
-  {
-    title: "StudentCode-in 2020",
-    cardImage: "assets/images/experience-page/2.jpg",
-    description:
-      "Responsible for handling open source contributions for the project Awesome Developer Portfolio.",
-  },
-  {
-    title: "PClub Summer Of Code 2020",
-    cardImage: "assets/images/experience-page/3.jpg",
-    description:
-      "Mentoring for the projects Deep Pixel, AutoVaidya, Just Resume and Doc2pen.",
-  },
-  {
-    title: "Hakin-Codes",
-    cardImage: "assets/images/experience-page/4.jpg",
-    description:
-      "Mentoring for the open source projects Deeppixel, Awesome Developer Portfolios and Doc2Pen.",
-  },
+  // {
+  //   title: "GirlScript Summer Of Code 2020",
+  //   cardImage: "assets/images/experience-page/1.jpg",
+  //   description:
+  //     "Responsible for handling the projects GirlScript App and GirlScript Website Boilerplate.",
+  // },
+  // {
+  //   title: "StudentCode-in 2020",
+  //   cardImage: "assets/images/experience-page/2.jpg",
+  //   description:
+  //     "Responsible for handling open source contributions for the project Awesome Developer Portfolio.",
+  // },
+  // {
+  //   title: "PClub Summer Of Code 2020",
+  //   cardImage: "assets/images/experience-page/3.jpg",
+  //   description:
+  //     "Mentoring for the projects Deep Pixel, AutoVaidya, Just Resume and Doc2pen.",
+  // },
+  // {
+  //   title: "Hakin-Codes",
+  //   cardImage: "assets/images/experience-page/4.jpg",
+  //   description:
+  //     "Mentoring for the open source projects Deeppixel, Awesome Developer Portfolios and Doc2Pen.",
+  // },
 ];
 
 const showCards = () => {
