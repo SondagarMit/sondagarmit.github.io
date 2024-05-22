@@ -5,11 +5,12 @@ AOS.init();
 const experiencecards = document.querySelector(".experience-cards");
 const exp = [
   {
-    title: "Software Development Intern",
+    title: "Unity Game Developer Intern ",
     cardImage: "assets/images/experience-page/flipkart.jpg",
     place: "Flipkart",
-    time: "(May, 2020 - present)",
-    desp: "<li>Worked to migrate Flipkart lite’s product page to AMP pages so that they load up instantly.</li> <li>Made changes in the current progressive web app of Flipkart to react to different actions performed on AMP page.</li> <li>Created a node module called “fk-amp” which abstracts all the files and middlewares and can be easily imported and used from express server.</li>",
+    time: "(Jan, 2024 - present)",
+    desp: "<li>Developed immersive 3D and 2D game environments using Unity, enhancing user engagement and interaction.</li> <li>Optimized game performance by implementing efficient algorithms and data structures, resulting in smoother gameplay experiences.</li> <li>Collaborated with cross-functional teams to design and implement game features, ensuring seamless integration and functionality.</li>",
+
   },
   {
     title: "Student Developer",
