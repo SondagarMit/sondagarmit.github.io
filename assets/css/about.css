@@ -1,38 +1,50 @@
-  html, body {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .container {
+/* Container */
+.container {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Main box takes 2/3 and right container takes 1/3 */
+    gap: 20px; /* Gap between grid items */
+    padding: 20px;
+}
+
+/* Main Box */
+.main-box {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main-box h2 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.main-box p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Right Container */
+.right-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-  }
-  .content {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-  }
-  .box {
+}
+
+/* Box */
+.box {
+    background-color: #f0f0f0;
     padding: 20px;
-    border: 1px solid black;
-    margin: 10px;
-    box-sizing: border-box;
-  }
-  .button {
-    padding: 10px 20px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    text-transform: uppercase;
-    cursor: pointer;
-    align-self: flex-start; /* Align button to the start of flex container */
-  }
-  /* Additional styles for responsiveness */
-  @media (max-width: 768px) {
-    .content {
-      flex-direction: column;
-    }
-  }
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.box h2 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.box p {
+    font-size: 1em;
+    color: #666;
+}
