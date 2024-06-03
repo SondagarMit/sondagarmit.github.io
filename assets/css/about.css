@@ -32,7 +32,7 @@
 
 .main-box img {
     width: 100%; /* Make the image cover the container */
-    max-width: 6000px; /* Set maximum width for responsiveness */
+    max-width: 600px; /* Set maximum width for responsiveness */
     height: auto; /* Maintain aspect ratio */
     margin-bottom: 10px;
 }
