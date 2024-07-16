@@ -28,6 +28,7 @@ let header = $(`
    <li class="nav-item nav-item-hover"><a class="nav-link" href="projects.html">Projects</a></li>
    <li class="nav-item nav-item-hover"><a class="nav-link" href="education.html">Education</a></li>
    <li class="nav-item nav-item-hover"><a class="nav-link" href="about.html">About</a></li>
+   <li class="nav-item nav-item-hover"><a class="nav-link" href="contactus.html">Contact Us</a></li>
    <li class="nav-item nav-item-hover"><a class="nav-link" href="gamedevfrn.html">Friends</a></li>
 
 
