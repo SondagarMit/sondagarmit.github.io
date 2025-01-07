@@ -8,7 +8,7 @@ const exp = [
     title: "Unity Game Developer Intern ",
     cardImage: "assets/images/experience-page/bvm.jpg",
     place: "BVM Infotech",
-    time: "(Jan, 2024 - present)",
+    time: "(Jan, 2024 - Septemeber, 2024)",
     desp: "<li>Developed immersive 3D and 2D game environments using Unity, enhancing user engagement and interaction.</li> <li>Optimized game performance by implementing efficient algorithms and data structures, resulting in smoother gameplay experiences.</li> <li>Collaborated with cross-functional teams to design and implement game features, ensuring seamless integration and functionality.</li>",
 
   },
