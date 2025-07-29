@@ -1,197 +1,130 @@
 <!DOCTYPE html>
-<html lang="en" light-mode="dark" class="scroll-smooth">
+<html lang="en" data-theme="dark">
 <head>
-    <title>Mit Sondagar | Professional Profile</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Professional portfolio of Mit Sondagar - Game Developer, Software Engineer, and Technology Innovator">
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Custom Tailwind Configuration -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'brand-primary': '#3B82F6',
-                        'brand-secondary': '#10B981',
-                        'dark-background': '#0F172A',
-                        'dark-surface': '#1E293B',
-                        'professional-text': '#E2E8F0'
-                    },
-                    boxShadow: {
-                        'professional': '0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'
-                    },
-                    fontFamily: {
-                        'sans': ['Inter', 'ui-sans-serif', 'system-ui'],
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Professional Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mit Sondagar | About</title>
     
     <!-- Favicon -->
-    <link rel="icon" href="assets/images/favicon.png" type="image/png">
+    <link id='favicon' rel="icon" href="assets/images/favicon.png" type="image/png">
+    
+    <!-- Stylesheets -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/about.css">
+    
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="assets/images/dp.png" as="image">
     
     <!-- SEO and Accessibility -->
-    <meta name="robots" content="index, follow">
+    <meta name="description" content="About Mit Sondagar - Professional Game Developer and Programmer">
+    <meta name="keywords" content="Mit Sondagar, Game Developer, Programmer, Portfolio">
     <meta name="author" content="Mit Sondagar">
-    
-    <!-- Custom Styles -->
-    <style>
-        /* Smooth scroll and custom scrollbar */
-        html {
-            scroll-behavior: smooth;
-        }
-        body::-webkit-scrollbar {
-            width: 8px;
-        }
-        body::-webkit-scrollbar-track {
-            background: #1E293B;
-        }
-        body::-webkit-scrollbar-thumb {
-            background-color: #3B82F6;
-            border-radius: 20px;
-        }
-    </style>
 </head>
-<body class="bg-dark-background text-professional-text antialiased">
-    <div class="container mx-auto px-4 py-12 max-w-6xl">
-        <!-- Professional Header -->
-        <header class="mb-12 text-center">
-            <h1 class="text-4xl font-bold text-brand-primary mb-4 tracking-tight">
-                Mit Sondagar
-            </h1>
-            <p class="text-xl text-professional-text/80 max-w-2xl mx-auto">
-                Game Developer | Software Engineer | Technology Innovator
-            </p>
-        </header>
+<body>
+    <!-- Preloader -->
+    <div class="loader-container">
+        <div class="atom">
+            <div class="electron"></div>
+            <div class="electron-alpha"></div>
+            <div class="electron-omega"></div>
+        </div>
+    </div>
 
-        <div class="grid md:grid-cols-3 gap-8">
-            <!-- Professional Profile Image -->
-            <div class="md:col-span-1 flex justify-center items-center">
-                <div class="relative">
-                    <img 
-                        src="assets/images/dp.png" 
-                        alt="Mit Sondagar Professional Headshot" 
-                        class="w-64 h-64 object-cover rounded-full ring-4 ring-brand-primary/50 shadow-professional transform transition duration-300 hover:scale-105"
-                        loading="lazy"
-                    >
-                    <div class="absolute bottom-0 right-0 bg-brand-primary text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                        </svg>
-                    </div>
+    <!-- Light/Dark Mode Toggle -->
+    <div class="light-mode-button-container">
+        <button class="light-mode-button" aria-label="Toggle Dark/Light Mode">
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+
+    <!-- Main Content -->
+    <main class="about-section">
+        <div class="container">
+            <section class="profile-section">
+                <div class="profile-image">
+                    <img src="assets/images/dp.png" alt="Mit Sondagar's Professional Portrait" loading="lazy">
                 </div>
-            </div>
-
-            <!-- Professional Summary -->
-            <div class="md:col-span-2 bg-dark-surface rounded-xl p-6 shadow-professional">
-                <h2 class="text-2xl font-semibold text-brand-secondary mb-4">Professional Profile</h2>
-                <p class="text-professional-text/90 leading-relaxed mb-4">
-                    A passionate Game Developer and Software Engineer with a strong focus on creating innovative technological solutions. Specializing in Unity Game Development, I am dedicated to pushing the boundaries of interactive experiences and software design.
-                </p>
-                
-                <div class="grid md:grid-cols-2 gap-4">
-                    <div>
-                        <h3 class="text-lg font-semibold text-brand-primary mb-2">Contact Information</h3>
-                        <ul class="space-y-2">
-                            <li class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-brand-secondary" viewBox="0 0 20 20" fill="currentColor">
-                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                                </svg>
-                                <a href="mailto:sondagarmit@gmail.com" class="hover:text-brand-primary transition">
-                                    sondagarmit@gmail.com
-                                </a>
-                            </li>
-                            <li class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-brand-secondary" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
-                                </svg>
-                                Surat, Gujarat, India
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="flex items-center justify-center">
-                        <a 
-                            href="Mit_Resume.pdf" 
-                            download 
-                            class="bg-brand-primary hover:bg-brand-primary/90 text-white font-bold py-3 px-6 rounded-lg transition duration-300 flex items-center space-x-2 transform hover:scale-105"
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
-                            </svg>
-                            <span>Download Resume</span>
+                <div class="profile-details">
+                    <h1 class="section-title">About <span class="highlight">Me</span></h1>
+                    <p class="profile-description">
+                        A passionate Game Developer based in Surat, Gujarat, with a strong commitment to continuous learning and innovative game design. Specializing in Unity Game Engine development, I transform creative concepts into engaging interactive experiences.
+                    </p>
+                    <div class="contact-info">
+                        <h2 class="contact-title">Professional Contact</h2>
+                        <div class="contact-details">
+                            <p>
+                                <strong>Email:</strong> 
+                                <a href="mailto:sondagarmit@gmail.com" class="contact-link">sondagarmit@gmail.com</a>
+                            </p>
+                            <p>
+                                <strong>Location:</strong> Surat, Gujarat, India
+                            </p>
+                        </div>
+                        <a href="Mit_Resume.pdf" class="resume-btn" download>
+                            <span class="btn-text">Download Resume</span>
                         </a>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
 
-        <!-- Professional Skills Section -->
-        <section class="mt-12 bg-dark-surface rounded-xl p-6 shadow-professional">
-            <h2 class="text-2xl font-semibold text-brand-secondary mb-6 text-center">Professional Skills</h2>
-            <div class="grid md:grid-cols-4 gap-6">
-                <div>
-                    <h3 class="text-lg font-semibold text-brand-primary mb-3">Programming</h3>
-                    <ul class="space-y-2 text-professional-text/80">
-                        <li>C++</li>
-                        <li>C#</li>
-                        <li>Python</li>
-                        <li>JavaScript</li>
-                        <li>HTML & CSS</li>
-                    </ul>
+            <section class="skills-section">
+                <h2 class="section-title">Professional <span class="highlight">Skills</span></h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3 class="category-title">Programming Languages</h3>
+                        <ul>
+                            <li>C++</li>
+                            <li>C#</li>
+                            <li>Python</li>
+                            <li>JavaScript</li>
+                            <li>HTML & CSS</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3 class="category-title">Game Development</h3>
+                        <ul>
+                            <li>Unity Game Engine</li>
+                            <li>3D Game Design</li>
+                            <li>Multiplayer Development</li>
+                            <li>Game Mechanics</li>
+                            <li>Blender Modeling</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3 class="category-title">Tools & Software</h3>
+                        <ul>
+                            <li>Visual Studio Code</li>
+                            <li>GitHub</li>
+                            <li>Adobe Creative Suite</li>
+                            <li>Microsoft Office</li>
+                            <li>Android Studio</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3 class="category-title">Technologies</h3>
+                        <ul>
+                            <li>API Development</li>
+                            <li>Firebase</li>
+                            <li>AI Automation</li>
+                            <li>Version Control</li>
+                            <li>Cloud Services</li>
+                        </ul>
+                    </div>
                 </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-brand-primary mb-3">Game Development</h3>
-                    <ul class="space-y-2 text-professional-text/80">
-                        <li>Unity</li>
-                        <li>Game Design</li>
-                        <li>3D Modeling</li>
-                        <li>Multiplayer Systems</li>
-                        <li>Game Mechanics</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-brand-primary mb-3">Tools & Software</h3>
-                    <ul class="space-y-2 text-professional-text/80">
-                        <li>Blender</li>
-                        <li>Visual Studio</li>
-                        <li>GitHub</li>
-                        <li>Adobe Creative Suite</li>
-                        <li>VS Code</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-brand-primary mb-3">Technologies</h3>
-                    <ul class="space-y-2 text-professional-text/80">
-                        <li>API Development</li>
-                        <li>Firebase</li>
-                        <li>AI Automation</li>
-                        <li>Cloud Computing</li>
-                        <li>Version Control</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-dark-surface py-6 mt-12">
-        <div class="container mx-auto text-center text-professional-text/60">
-            <p>&copy; 2023 Mit Sondagar. All Rights Reserved.</p>
+            </section>
         </div>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <footer class="footer">
+        <!-- Add footer content if needed -->
     </footer>
 
-    <!-- Optional: Cursor and other scripts -->
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="assets/js/app.js"></script>
-    <script src="assets/js/cursor.js"></script>
+    <script src="assets/js/dynamicTitle.js"></script>
 </body>
 </html>
