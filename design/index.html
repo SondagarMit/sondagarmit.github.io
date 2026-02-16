@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Design Studio | Premium Graphic Designer Portfolio</title>
+    <meta name="description"
+        content="Premium Graphic Designer Portfolio for Startups. Specialized in Branding, UI/UX, and Social Media Design.">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Creative Design Studio | Startup Portfolio">
+    <meta property="og:description"
+        content="Elevating startup identities with premium graphic design. Branding, UI/UX, and more.">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0F172A',
+                        accent: '#6366F1',
+                        secondary: '#EC4899',
+                        highlight: '#F59E0B',
+                        light: '#F8FAFC',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        '2xl': '1.25rem',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .glass {
+                @apply bg-white/70 backdrop-blur-md border border-white/20;
+            }
+            .text-gradient {
+                @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-pink-500;
+            }
+            .btn-primary {
+                @apply px-8 py-3 bg-gradient-to-r from-indigo-500 to-pink-500 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-indigo-500/30 transition-all active:scale-95 text-center;
+            }
+            .btn-outline {
+                @apply px-8 py-3 border-2 border-indigo-500 text-indigo-500 font-semibold rounded-full hover:bg-indigo-50 transition-all active:scale-95 text-center;
+            }
+            .nav-link {
+                @apply text-slate-600 hover:text-indigo-500 font-medium transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-indigo-500 after:transition-all hover:after:w-full;
+            }
+            .reveal {
+                @apply opacity-0 translate-y-10 transition-all duration-1000;
+            }
+            .reveal.active {
+                @apply opacity-100 translate-y-0;
+            }
+            .scroll-indicator {
+                @apply fixed bottom-8 right-8 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-indigo-500 cursor-pointer opacity-0 translate-y-10 transition-all duration-300 z-40 hover:bg-indigo-500 hover:text-white;
+            }
+            .scroll-indicator.visible {
+                @apply opacity-100 translate-y-0;
+            }
+            .dot-pulse {
+                @apply relative flex h-3 w-3;
+            }
+            .dot-pulse span:nth-child(1) {
+                @apply animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75;
+            }
+            .dot-pulse span:nth-child(2) {
+                @apply relative inline-flex rounded-full h-3 w-3 bg-green-500;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-light font-inter text-primary antialiased overflow-x-hidden">
+
+    <!-- Sticky Navbar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 py-6">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-poppins font-bold flex items-center gap-2">
+                <div
+                    class="w-10 h-10 bg-gradient-to-tr from-indigo-500 to-pink-500 rounded-xl flex items-center justify-center text-white shadow-lg">
+                    DS</div>
+                <span>DesignStudio</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#work" class="nav-link">Work</a>
+                <a href="#clients" class="nav-link">Clients</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <div
+                    class="flex items-center gap-2 px-4 py-2 bg-slate-50 rounded-full text-xs font-semibold border border-slate-100">
+                    <span class="dot-pulse">
+                        <span></span>
+                        <span></span>
+                    </span>
+                    <span class="text-slate-500">Available for Hire</span>
+                </div>
+                <a href="#contact" class="btn-primary py-2 px-6 text-sm">Hire Me</a>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <button id="menu-btn" class="md:hidden text-primary focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="hidden fixed inset-0 bg-white z-50 flex flex-col items-center justify-center gap-8 transform transition-transform duration-300 translate-x-full">
+            <button id="close-menu" class="absolute top-6 right-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <a href="#home" class="text-2xl font-poppins font-bold nav-link">Home</a>
+            <a href="#about" class="text-2xl font-poppins font-bold nav-link">About</a>
+            <a href="#work" class="text-2xl font-poppins font-bold nav-link">Work</a>
+            <a href="#clients" class="text-2xl font-poppins font-bold nav-link">Clients</a>
+            <a href="#contact" class="text-2xl font-poppins font-bold nav-link">Contact</a>
+            <a href="#contact" class="btn-primary">Hire Me</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Background Decorative Shapes -->
+        <div
+            class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-indigo-500/10 blur-[100px] rounded-full">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-pink-500/10 blur-[100px] rounded-full">
+        </div>
+
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="animate-fade-in-up">
+                <h1 class="text-5xl lg:text-7xl font-poppins font-bold leading-tight mb-6">
+                    Design That Makes <br> <span class="text-gradient">Startups Stand Out</span>
+                </h1>
+                <p class="text-lg text-slate-600 mb-10 max-w-lg">
+                    We create premium brand identities and digital experiences that build trust, drive conversions, and
+                    help your startup scale.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#work" class="btn-primary">View Work</a>
+                    <a href="#contact" class="btn-outline">Let's Talk</a>
+                </div>
+            </div>
+
+            <div class="relative group">
+                <div
+                    class="absolute -inset-4 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-1000">
+                </div>
+                <div class="relative bg-white p-2 rounded-3xl shadow-2xl animate-float">
+                    <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800"
+                        alt="Creative Mockup" class="rounded-2xl w-full object-cover aspect-[4/3]" loading="lazy">
+                </div>
+                <!-- Floating Elements -->
+                <div
+                    class="absolute -top-6 -left-6 bg-white p-4 rounded-2xl shadow-xl animate-float delay-700 hidden lg:block">
+                    <div class="flex items-center gap-3">
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        <span class="text-sm font-semibold">Live Project</span>
+                    </div>
+                </div>
+                <div
+                    class="absolute -bottom-10 -right-6 bg-white p-6 rounded-2xl shadow-xl animate-float delay-1000 hidden lg:block">
+                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=100"
+                        class="w-20 h-20 rounded-xl object-cover" alt="Small Thumbnail">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-16 items-center mb-24">
+                <div class="lg:w-1/2 reveal">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800"
+                        alt="Designer Profile" class="rounded-2xl shadow-2xl w-full h-[500px] object-cover">
+                </div>
+                <div class="lg:w-1/2 reveal">
+                    <h2 class="text-4xl font-poppins font-bold mb-6">Innovative Design for the Next Generation of
+                        Founders</h2>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                        I'm a graphic designer with a passion for startup branding. Over the last 3 years, I've helped
+                        dozens of companies define their visual language and connect with their audience through
+                        thoughtful design.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="text-center p-6 bg-slate-50 rounded-2xl">
+                            <div class="text-3xl font-bold text-gradient mb-2">50+</div>
+                            <div class="text-sm text-slate-500 font-medium tracking-wide">PROJECTS</div>
+                        </div>
+                        <div class="text-center p-6 bg-slate-50 rounded-2xl">
+                            <div class="text-3xl font-bold text-gradient mb-2">20+</div>
+                            <div class="text-sm text-slate-500 font-medium tracking-wide">CLIENTS</div>
+                        </div>
+                        <div class="text-center p-6 bg-slate-50 rounded-2xl">
+                            <div class="text-3xl font-bold text-gradient mb-2">3+</div>
+                            <div class="text-sm text-slate-500 font-medium tracking-wide">YEARS EXP.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service Cards -->
+                <div
+                    class="p-10 bg-white rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-slate-100 reveal">
+                    <div
+                        class="w-14 h-14 bg-indigo-500/10 rounded-xl flex items-center justify-center text-indigo-500 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.172-1.172a4 4 0 115.656 5.656L10 17.657" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Branding</h3>
+                    <p class="text-slate-500 leading-relaxed">Creating cohesive and memorable brand identities that
+                        resonate with your target audience.</p>
+                </div>
+
+                <div
+                    class="p-10 bg-white rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-slate-100 reveal">
+                    <div
+                        class="w-14 h-14 bg-pink-500/10 rounded-xl flex items-center justify-center text-pink-500 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Social Media</h3>
+                    <p class="text-slate-500 leading-relaxed">High-impact social media assets designed to stop the
+                        scroll and drive engagement.</p>
+                </div>
+
+                <div
+                    class="p-10 bg-white rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-slate-100 reveal">
+                    <div
+                        class="w-14 h-14 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-500 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9.75 17L9 21h6l-.75-4M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">UI & Identity</h3>
+                    <p class="text-slate-500 leading-relaxed">Modern UI design and digital identities tailored for
+                        tech-focused startups and apps.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="py-24 bg-light overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-poppins font-bold mb-4">Featured Work</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">Selected projects that showcase our commitment to creative
+                    excellence and startup focus.</p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12 reveal">
+                <button
+                    class="filter-btn active px-6 py-2 rounded-full font-semibold transition-all bg-indigo-500 text-white"
+                    data-filter="all">All</button>
+                <button
+                    class="filter-btn px-6 py-2 rounded-full font-semibold transition-all bg-white text-slate-500 hover:bg-indigo-50"
+                    data-filter="branding">Branding</button>
+                <button
+                    class="filter-btn px-6 py-2 rounded-full font-semibold transition-all bg-white text-slate-500 hover:bg-indigo-50"
+                    data-filter="logos">Logos</button>
+                <button
+                    class="filter-btn px-6 py-2 rounded-full font-semibold transition-all bg-white text-slate-500 hover:bg-indigo-50"
+                    data-filter="social">Social</button>
+                <button
+                    class="filter-btn px-6 py-2 rounded-full font-semibold transition-all bg-white text-slate-500 hover:bg-indigo-50"
+                    data-filter="ui">UI</button>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Branding Card -->
+                <div
+                    class="portfolio-item branding reveal relative group overflow-hidden rounded-2xl aspect-square shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=600"
+                        alt="Branding Project"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span
+                            class="text-indigo-400 font-semibold mb-2 text-sm uppercase tracking-widest">Branding</span>
+                        <h3 class="text-white text-xl font-bold">Nexa Identity</h3>
+                    </div>
+                </div>
+
+                <!-- UI Card -->
+                <div
+                    class="portfolio-item ui reveal relative group overflow-hidden rounded-2xl aspect-square shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?auto=format&fit=crop&q=80&w=600"
+                        alt="UI Project"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-indigo-400 font-semibold mb-2 text-sm uppercase tracking-widest">UI
+                            Design</span>
+                        <h3 class="text-white text-xl font-bold">Flow SaaS Platform</h3>
+                    </div>
+                </div>
+
+                <!-- Logos Card -->
+                <div
+                    class="portfolio-item logos reveal relative group overflow-hidden rounded-2xl aspect-square shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1626785774625-ddc7c82a1e5e?auto=format&fit=crop&q=80&w=600"
+                        alt="Logo Project"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-indigo-400 font-semibold mb-2 text-sm uppercase tracking-widest">Logo
+                            Design</span>
+                        <h3 class="text-white text-xl font-bold">Minimalist Collection</h3>
+                    </div>
+                </div>
+
+                <!-- Social Card -->
+                <div
+                    class="portfolio-item social reveal relative group overflow-hidden rounded-2xl aspect-square shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=600"
+                        alt="Social Media Project"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-indigo-400 font-semibold mb-2 text-sm uppercase tracking-widest">Social
+                            Media</span>
+                        <h3 class="text-white text-xl font-bold">Campaign Assets</h3>
+                    </div>
+                </div>
+
+                <!-- UI Card 2 -->
+                <div
+                    class="portfolio-item ui reveal relative group overflow-hidden rounded-2xl aspect-square shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&q=80&w=600"
+                        alt="UI Project"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-indigo-400 font-semibold mb-2 text-sm uppercase tracking-widest">UI
+                            Design</span>
+                        <h3 class="text-white text-xl font-bold">Health Dashboard</h3>
+                    </div>
+                </div>
+
+                <!-- Branding Card 2 -->
+                <div
+                    class="portfolio-item branding reveal relative group overflow-hidden rounded-2xl aspect-square shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1583054170811-9a7217596ff5?auto=format&fit=crop&q=80&w=600"
+                        alt="Branding Project"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span
+                            class="text-indigo-400 font-semibold mb-2 text-sm uppercase tracking-widest">Branding</span>
+                        <h3 class="text-white text-xl font-bold">EcoSystem Brand</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients & Testimonials Section -->
+    <section id="clients" class="py-24 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-poppins font-bold mb-4">Trusted by Market Leaders</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">Collaborating with visionary founders to build the brands of
+                    tomorrow.</p>
+            </div>
+
+            <!-- Client Logos Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 items-center mb-24 reveal">
+                <div
+                    class="flex justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-50 hover:opacity-100">
+                    <span class="text-2xl font-bold text-slate-400">LOGOTYPE</span>
+                </div>
+                <div
+                    class="flex justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-50 hover:opacity-100">
+                    <span class="text-2xl font-bold text-slate-400">STARTUP</span>
+                </div>
+                <div
+                    class="flex justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-50 hover:opacity-100">
+                    <span class="text-2xl font-bold text-slate-400">FINTECH</span>
+                </div>
+                <div
+                    class="flex justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-50 hover:opacity-100">
+                    <span class="text-2xl font-bold text-slate-400">SAASCO</span>
+                </div>
+                <div
+                    class="flex justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-50 hover:opacity-100">
+                    <span class="text-2xl font-bold text-slate-400">TECHPRO</span>
+                </div>
+                <div
+                    class="flex justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-50 hover:opacity-100">
+                    <span class="text-2xl font-bold text-slate-400">VISION</span>
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-10 rounded-3xl shadow-lg border border-slate-100 reveal">
+                    <div class="flex gap-1 text-amber-500 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                    </div>
+                    <p class="text-slate-600 italic mb-8">"Their ability to translate our vision into a stunning brand
+                        identity was exceptional. Fast, professional, and creative."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-slate-200"></div>
+                        <div>
+                            <div class="font-bold">Sarah Jenkins</div>
+                            <div class="text-sm text-slate-500">CEO, Nexa Startup</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-10 rounded-3xl shadow-lg border border-slate-100 reveal">
+                    <div class="flex gap-1 text-amber-500 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                    </div>
+                    <p class="text-slate-600 italic mb-8">"Working with DesignStudio was a game-changer for our app. The
+                        UI is clean, intuitive, and exactly what we needed."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-slate-200"></div>
+                        <div>
+                            <div class="font-bold">David Chen</div>
+                            <div class="text-sm text-slate-500">Founder, Flow SaaS</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-10 rounded-3xl shadow-lg border border-slate-100 reveal">
+                    <div class="flex gap-1 text-amber-500 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                    </div>
+                    <p class="text-slate-600 italic mb-8">"Highly recommended. They understood our brand requirements
+                        perfectly and delivered ahead of schedule."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-slate-200"></div>
+                        <div>
+                            <div class="font-bold">Emilia Rossi</div>
+                            <div class="text-sm text-slate-500">Marketing Lab</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center reveal">
+                <h2 class="text-4xl lg:text-5xl font-poppins font-bold mb-6">Let's Build Something <span
+                        class="text-gradient">Amazing Together</span></h2>
+                <p class="text-lg text-slate-500 mb-12">Have a project in mind? We'd love to hear about it. Fill out the
+                    form below or reach out via social media.</p>
+
+                <form class="bg-slate-50 p-8 md:p-12 rounded-3xl shadow-xl text-left border border-slate-100 mb-16">
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Name</label>
+                            <input type="text"
+                                class="w-full px-6 py-4 bg-white border border-slate-200 rounded-2xl focus:ring-2 focus:ring-indigo-500 focus:outline-none transition-all"
+                                placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Email</label>
+                            <input type="email"
+                                class="w-full px-6 py-4 bg-white border border-slate-200 rounded-2xl focus:ring-2 focus:ring-indigo-500 focus:outline-none transition-all"
+                                placeholder="john@example.com">
+                        </div>
+                    </div>
+                    <div class="mb-8">
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Message</label>
+                        <textarea
+                            class="w-full px-6 py-4 bg-white border border-slate-200 rounded-2xl focus:ring-2 focus:ring-indigo-500 focus:outline-none transition-all h-32"
+                            placeholder="Tell us about your project..."></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn-primary w-full md:w-auto px-12 py-4 text-lg">Send
+                            Message</button>
+                    </div>
+                </form>
+
+                <div class="flex flex-wrap justify-center gap-8 lg:gap-16">
+                    <a href="#"
+                        class="flex items-center gap-3 text-slate-600 hover:text-indigo-500 transition-colors group">
+                        <div
+                            class="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center group-hover:bg-indigo-500 group-hover:text-white transition-all text-xl font-bold">
+                            In</div>
+                        <span class="font-semibold">LinkedIn</span>
+                    </a>
+                    <a href="#"
+                        class="flex items-center gap-3 text-slate-600 hover:text-indigo-500 transition-colors group">
+                        <div
+                            class="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center group-hover:bg-indigo-500 group-hover:text-white transition-all text-xl font-bold">
+                            Dr</div>
+                        <span class="font-semibold">Dribbble</span>
+                    </a>
+                    <a href="#"
+                        class="flex items-center gap-3 text-slate-600 hover:text-indigo-500 transition-colors group">
+                        <div
+                            class="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center group-hover:bg-indigo-500 group-hover:text-white transition-all text-xl font-bold">
+                            Be</div>
+                        <span class="font-semibold">Behance</span>
+                    </a>
+                    <a href="#"
+                        class="flex items-center gap-3 text-slate-600 hover:text-indigo-500 transition-colors group">
+                        <div
+                            class="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center group-hover:bg-indigo-500 group-hover:text-white transition-all text-xl font-bold">
+                            Ig</div>
+                        <span class="font-semibold">Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-6">
+            <div
+                class="flex flex-col md:flex-row justify-between items-center gap-8 border-b border-slate-800 pb-12 mb-12">
+                <div>
+                    <a href="#" class="text-2xl font-poppins font-bold flex items-center gap-2 mb-4">
+                        <span
+                            class="w-10 h-10 bg-gradient-to-tr from-indigo-500 to-pink-500 rounded-xl flex items-center justify-center text-white">DS</span>
+                        <span>DesignStudio</span>
+                    </a>
+                    <p class="text-slate-400 max-w-sm">Premium design boutique helping startups build world-class brands
+                        since 2023.</p>
+                </div>
+                <div class="flex gap-8">
+                    <a href="#home" class="hover:text-indigo-400 transition-colors">Home</a>
+                    <a href="#about" class="hover:text-indigo-400 transition-colors">About</a>
+                    <a href="#work" class="hover:text-indigo-400 transition-colors">Work</a>
+                    <a href="#contact" class="hover:text-indigo-400 transition-colors">Contact</a>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-sm">
+                <p>&copy; 2026 DesignStudio. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div id="back-to-top" class="scroll-indicator">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        const backToTop = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('glass', 'shadow-sm', 'py-4');
+                navbar.classList.remove('py-6');
+            } else {
+                navbar.classList.remove('glass', 'shadow-sm', 'py-4');
+                navbar.classList.add('py-6');
+            }
+
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenu = document.getElementById('close-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            setTimeout(() => mobileMenu.classList.remove('translate-x-full'), 10);
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+            setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+                setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+            });
+        });
+
+        // Portfolio Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('bg-indigo-500', 'text-white'));
+                filterBtns.forEach(b => b.classList.add('bg-white', 'text-slate-500'));
+                btn.classList.remove('bg-white', 'text-slate-500');
+                btn.classList.add('bg-indigo-500', 'text-white');
+
+                const filter = btn.getAttribute('data-filter');
+
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) {
+                        item.classList.remove('hidden');
+                        setTimeout(() => item.classList.add('active'), 10);
+                    } else {
+                        item.classList.add('hidden');
+                        item.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Scroll Reveal Animation
+        const reveals = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            reveals.forEach(reveal => {
+                const windowHeight = window.innerHeight;
+                const revealTop = reveal.getBoundingClientRect().top;
+                const revealPoint = 150;
+
+                if (revealTop < windowHeight - revealPoint) {
+                    reveal.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Smooth Scroll for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
